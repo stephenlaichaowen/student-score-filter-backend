@@ -6,10 +6,10 @@ const studentsControllers = require('./controllers/students')
 const corsOption = { origin: 'https://student-score-filter-frontend.netlify.app/' }
 
 app.use(express.json())
-// app.use(cors())
+app.use(cors())
 
-app.get('/', cors(corsOption), studentsControllers.getStudents)
+app.get('/', studentsControllers.getStudents)
 
-app.post('/', cors(corsOption), studentsControllers.saveSingleStudent)
+app.post('/', studentsControllers.saveSingleStudent)
 
 app.listen(port, () => console.log(`Server running on port ${port}`))
