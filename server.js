@@ -9,6 +9,8 @@ app.use(cors())
 
 app.get('/', studentsControllers.getStudents)
 
-app.post('/', studentsControllers.saveSingleStudent)
+app.post('/', studentsControllers.saveStudent)
+
+app.delete('/:id', studentsControllers.delStudent)
 
 app.listen(port, () => console.log(`Server running on port ${port}`))
