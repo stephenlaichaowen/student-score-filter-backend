@@ -12,5 +12,6 @@ exports.saveSingleStudent =  (req, res) => {
     ...data
   })
   console.log(records);
+  res.send({ status: 'write success' })
   fs.writeFileSync('db/records.json', JSON.stringify(records, null, 4))
 }
